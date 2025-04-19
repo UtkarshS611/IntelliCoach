@@ -13,6 +13,8 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { toast } from "sonner";
 import FormField from "./FormField/FormField";
+import Image from "next/image";
+
 
 const authFormSchema = (type: FormType) => {
   return z.object({
@@ -54,7 +56,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
   const isSignIn = type === "sign-in";
 
   return (
-    <section className="flex min-h-screen w-full px-4 py-16 md:py-32 dark:bg-transparent">
+    <section className="flex min-h-screen w-full dark:bg-transparent">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -62,15 +64,10 @@ const AuthForm = ({ type }: { type: FormType }) => {
         >
           <div className="p-8 pb-6">
             <div className="text-center">
-              {isSignIn ? (
-                <h1 className="mb-1 mt-4 text-xl font-semibold">
-                  Sign In to <span className="text-primary">Intellicoach</span>
-                </h1>
-              ) : (
-                <h1 className="mb-1 mt-4 text-xl font-semibold">
-                  Create a <span className="text-primary">Intellicoach</span> Account
-                </h1>
-              )}
+              <h1 className="mb-1 mt-4 text-xl font-semibold flex items-center gap-3 justify-center">
+                <span className="text-primary">Intellicoach</span>
+                <Image src={"logo.svg"} alt="logo" width={25} height={25} />
+              </h1>
               <p className="text-sm">
                 {isSignIn
                   ? "Welcome back! Sign in to continue"

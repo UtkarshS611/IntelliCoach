@@ -12,6 +12,9 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   title: "IntelliCoach",
   description: "Your very own personalized AI interview coach",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({
