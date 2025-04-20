@@ -1,9 +1,13 @@
-import React from 'react'
+import Header from "@/components/Header/Header";
+import React from "react";
 
-const RootLayout = ({children} : {children : React.ReactNode}) => {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main>{children}</main>
-  )
-}
+    <>
+      <Header />
+      <main>{children}</main>
+    </>
+  );
+};
 
-export default RootLayout
+export default RootLayout;
